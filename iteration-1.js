@@ -49,7 +49,27 @@ for(const place of places) {
     divs.appendChild(image);
     h4.innerText = place.title;
     image.src = place.imgUrl;
+    const button1 = document.createElement('button');
+    li.appendChild(button1);
+    button1.innerText = 'Eliminate';
+    button1.addEventListener('click', function (){
+       li.remove()
+    })
+
 }
+
+const button = document.createElement('input');
+button.type = 'button';
+document.body.appendChild(button);
+button.value = 'Eliminate';
+button.addEventListener('click', function (){
+    const allDivs = document.querySelectorAll('div');
+    const lastDiv = allDivs.length - 1;
+    allDivs[lastDiv].remove()
+})
+
+
+
 
 
 
